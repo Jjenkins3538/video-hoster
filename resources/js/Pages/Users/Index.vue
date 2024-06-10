@@ -20,6 +20,10 @@
             field: 'created_at',
             header: 'Created At',
         },
+        {
+            field: 'actions',
+            header: 'Actions',
+        }
     ];
 </script>
 
