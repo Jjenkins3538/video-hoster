@@ -8,6 +8,8 @@ import { createApp, h, DefineComponent, onMounted } from 'vue';
 import { createInertiaApp, Head, Link } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
+import moment from 'moment';
+import axiosInstance from './Plugins/axios';
 import PrimeVue from 'primevue/config';
 import InputText from 'primevue/inputtext';
 import Button from 'primevue/button';
@@ -21,7 +23,7 @@ import Row from 'primevue/row';
 import MultiSelect from 'primevue/multiselect';
 import Menubar from 'primevue/menubar';
 
-const appName = import.meta.env.VITE_APP_NAME || 'Video Hoster';
+const appName = 'Video Hoster';
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
@@ -31,6 +33,7 @@ createInertiaApp({
             .use(plugin)
             .use(ZiggyVue)
             .use(PrimeVue)
+            .use(moment)
             .component('InputText', InputText)
             .component('Button', Button)
             .component('Checkbox', Checkbox)

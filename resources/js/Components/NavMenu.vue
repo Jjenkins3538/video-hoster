@@ -58,10 +58,10 @@ const adminMenuItems = ref([
     // },
 ]);
 
-const menu = ref();
+const admin_menu = ref();
 
 const toggle = (event) => {
-    menu.value.toggle(event);
+    admin_menu.value.toggle(event);
 }
 
 const navHome = () => {
@@ -83,10 +83,10 @@ const navHome = () => {
                             </div>
 
                             <!-- Navigation Links -->
-                            <div class="flex items-end">
-                                <Button @click="navHome" iconPos="right" type="button" text severity="secondary" label="Home" class="mr-2 hover:underline text-black" size="small"/>
-                                <Button @click="toggle" icon="pi pi-angle-down" iconPos="right" type="button" text severity="secondary" label="Administration" class="mr-2 hover:underline text-black" size="small"/>
-                                <Menu ref="menu" id="admin_menu" :model="adminMenuItems" :popup="true" />
+                            <div class="flex items-end space-x-3">
+                                <Button @click="navHome" icon="pi pi-home" iconPos="right" type="button" text severity="secondary" label="Home" class="mr-2 hover:bg-gray-100 text-black" size="small"/>
+                                <Button @click="toggle" icon="pi pi-angle-down" iconPos="right" type="button" text severity="secondary" label="Administration" class="mr-2 hover:bg-gray-100 text-black" size="small"/>
+                                <Menu ref="admin_menu" id="admin_menu" :model="adminMenuItems" :popup="true" />
                             </div>
                         </div>
 

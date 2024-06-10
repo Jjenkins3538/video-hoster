@@ -27,6 +27,7 @@ Route::get('/dashboard', function () {
 
 Route::prefix('admin')->group(function () {
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::get('users/edit/{id}', [UserController::class, 'edit'])->name('users.edit');
 })->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
